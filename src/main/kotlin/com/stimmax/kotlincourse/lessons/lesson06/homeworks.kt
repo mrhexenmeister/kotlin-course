@@ -2,7 +2,7 @@ package org.example.com.stimmax.kotlincourse.lessons.lesson06
 
 fun main() {
     example0(9)
-    example2(3)
+    example2(2)
     example3(3)
     example4(1000)
     example5(".doc")
@@ -27,12 +27,12 @@ fun example0(arg: Int) {
 // До 2 лет каждый год собаки равен 10.5 человеческим годам, после - каждый год равен 4 человеческим годам.
 // Результат распечатай в консоль.
 fun example2(arg: Int) {
-    if (arg == 1) {
-        println("10.5") // when {arg == 1 ->println("10.5") ==2 ->println("21") >=3 ->println(arg*4) else ->println("ошибка")}
-    } else if (arg == 2) {
-        println("21")
-    } else if (arg >= 3) {
-        println(arg * 4)
+    if (arg in 0..2) {
+        println(arg*10.5) // when {arg == 1 ->println("10.5") ==2 ->println("21") >=3 ->println(arg*4) else ->println("ошибка")}
+    } //else if (arg == 2) {
+        //println(arg*10.5)
+    else if (arg >= 3) {
+        println((arg * 4)+21)
     } else {
         println("неправильно набран год")
     }
@@ -54,10 +54,11 @@ fun example3(arg: Int) {
 // 2 балла за каждые 100 рублей при сумме покупки до 1000 рублей и
 // 3 балла за каждые 100 рублей при сумме свыше этого.
 fun example4(arg: Int) {
+    val bonus: Int = 100
     if (arg <= 0) println("wrong number")
     else if (arg in 1..99) println("need moreee moneeeyyy")
-    else if (arg in 100..1000) println((arg / 100) * 2)
-    else println((arg / 100) * 3)
+    else if (arg in 100..1000) println((arg / bonus) * 2)
+    else println((arg / bonus) * 3)
 }
 
 
