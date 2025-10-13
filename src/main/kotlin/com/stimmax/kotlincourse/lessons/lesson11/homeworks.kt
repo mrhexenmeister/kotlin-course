@@ -1,8 +1,5 @@
 package org.example.com.stimmax.kotlincourse.lessons.lesson11
 
-import org.jetbrains.annotations.Nullable
-
-
 //Задачи на сигнатуру метода
 //Напишите сигнатуру метода в которую входит модификатор доступа,
 // название функции, список аргументов с типами и возвращаемое значение.
