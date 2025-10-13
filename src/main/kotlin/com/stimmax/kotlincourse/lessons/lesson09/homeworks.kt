@@ -95,7 +95,7 @@ fun main() {
     val searchmass = "аз"
     fun searchsub(array: Array<String>, searchString: String) {
         for (letter in array) {
-            if (letter.contains(searchString)) {
+            if (letter.contains(searchString, true)) {
                 println("нашлось $letter")
             }
         }
@@ -222,12 +222,4 @@ fun main() {
 
 }
 
-// Работа с Множествами Set
-//
-//
-//
-//
-//
-//
-//
 // Создайте множество строк и конвертируйте его в изменяемый список строк с использованием цикла.
