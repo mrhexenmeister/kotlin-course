@@ -27,7 +27,7 @@ fun main() {
 //    который был исправлен (ключ - название, значение - статус исправления).
     val vol5 = mutableMapOf("One" to "accept", "two" to "failed", "Three" to "accept")
     val del = vol5.remove("Three")
-    println(vol5)
+    println(del)
 //    Для словаря с результатами тестирования веб-страниц
 //    (ключ — URL страницы, значение — статус ответа), выведите сообщение о странице и статусе её проверки.
     val vol6 = mapOf("https://stimmax.ru/lesson/rabota-so-slovaryami" to "Online", "https://stimmax.ru" to "Online")
@@ -149,16 +149,48 @@ fun main() {
 //    Создайте отчет о тестировании, преобразовав словарь с результатами тестирования
 //    (ключ — идентификатор теста, значение — результат)
 //    в список строк формата "Test ID: результат".
-    val stringtest=simpleTestReport.entries.joinToString{"${it.key} : ${it.value}"}
+    val stringtest = simpleTestReport.entries.joinToString { "${it.key} : ${it.value}" }
     println(stringtest)
 //    Преобразуйте изменяемый словарь с результатами последнего тестирования в неизменяемый для архивации.
-    val lastRunSummaryNotMutable=lastRunSummary.toMap()
+    val lastRunSummaryNotMutable = lastRunSummary.toMap()
     println(lastRunSummaryNotMutable)
-//    Преобразуйте словарь, содержащий числовой ID теста и данные о времени выполнения тестов, заменив идентификаторы тестов на их строковый аналог (например через toString()).
-//    Для словаря с оценками производительности различных версий приложения (ключи - строковая версия, значения - дробное число времени ответа сервера) увеличьте каждую оценку на 10%, чтобы учесть новые условия тестирования.
+//    Преобразуйте словарь, содержащий числовой ID теста
+//    и данные о времени выполнения тестов, заменив идентификаторы тестов на их строковый аналог
+//    (например через toString()).
+    val testExecutionTimes = mapOf(
+        101 to 0.457,
+        102 to 12.35,
+        103 to 0.089,
+        104 to 2.155,
+        105 to 5.67
+    )
+    val testExecutionTimesString = testExecutionTimes.mapKeys { it.key.toString() }
+    println(testExecutionTimesString)
+//    Для словаря с оценками производительности различных версий приложения
+//    (ключи - строковая версия, значения - дробное число времени ответа сервера)
+//    увеличьте каждую оценку на 10%, чтобы учесть новые условия тестирования.
+    val versionPerformance = mapOf(
+        "1.0.0" to 0.85,
+        "1.1.0" to 0.79,
+        "1.2.0" to 1.12,
+        "2.0.0-beta" to 0.55
+    )
+    val versionPerformancePlus10 = versionPerformance.mapValues { it.value * 1.1 }
+    println(versionPerformancePlus10)
 //    Проверьте, пуст ли словарь с ошибками компиляции тестов.
+    val compilationErrors = mapOf(
+        "TestRunner.kt" to "Type Mismatch (Incompatible types)",
+        "DatabaseTest.kt" to "Unresolved reference: 'dbConnect'",
+        "UITests.kt" to "Missing semicolon at line 42",
+        "Utils.kt" to "[ERR_789] Function 'logData' is deprecated",
+    )
+    val compilationErrorsEmpty = compilationErrors.isEmpty()
+    println(compilationErrorsEmpty)
 //    Убедитесь, что словарь с результатами нагрузочного тестирования не пуст.
+    val compilationErrorsNotEmpty = compilationErrors.isNotEmpty()
+    println(compilationErrorsNotEmpty)
 //    Проверьте, прошли ли успешно все автоматизированные тесты в словаре с результатами.
+
 //    Определите, содержит ли словарь с результатами тестирования хотя бы один тест с ошибкой.
 //    Отфильтруйте словарь с результатами тестирования сервисов, оставив только те тесты, которые не прошли успешно и содержат в названии “optional”.
 }
