@@ -39,8 +39,8 @@ class Rack(private val maxShelves: Int) {
     //    Добавление Предмета (addItem):
 //    Добавляет предмет на первую свободную полку.
 //    Возвращает true, если предмет успешно добавлен, и false, если на всех полках недостаточно места.
-    fun addItem(item: String) {
-        if ()
-    }
+   // fun addItem(item: String) {
+     //   if ()
+   // }
 
 }
