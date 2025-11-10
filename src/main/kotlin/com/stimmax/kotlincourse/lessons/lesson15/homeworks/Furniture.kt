@@ -5,7 +5,9 @@ import org.example.com.stimmax.kotlincourse.lessons.lesson14.homeworks.Shelf
 abstract class Furniture(val type: String) {
 }
 
-open class Bedroom(val name: String) : Furniture("Мебель") {
+open class Bedroom(
+
+    val name: String) : Furniture("Мебель") {
 }
 
 class Closet(val shelf: Int) : Bedroom("Шкаф") {
